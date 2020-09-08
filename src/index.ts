@@ -25,16 +25,15 @@ const extension: JupyterFrontEndPlugin<void> = {
     palette: ICommandPalette,
     mainMenu: IMainMenu
   ) => {
-
     const { commands } = app;
 
     // Add a command
     const command = 'noteline-jupyterlab-extension:main-menu';
-    
     commands.addCommand(command, {
       label: 'Execute server request:main-menu Command',
       caption: 'Execute server request:main-menu Command',
       execute: async (args: any) => {
+        
         // GET request
         try {
           const data = await requestAPI<any>('hello');
